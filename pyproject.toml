@@ -37,4 +37,7 @@ Homepage = "https://github.com/your-org/excel-mcp"
 Issues = "https://github.com/your-org/excel-mcp/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/excel_mcp"]
+packages = ["excel_mcp"]
+
+[tool.hatch.build]
+package-dir = { "" = "src" }
