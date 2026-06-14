@@ -1,4 +1,4 @@
-# excel-mcp
+# excel-mcp-polars
 
 An MCP server that lets LLMs inspect, query, and transform tabular files using [Polars](https://pola.rs/) — the fast, Arrow-native DataFrame library.
 
@@ -17,7 +17,7 @@ The fastest way — `uvx` downloads and runs the package on demand:
   "mcpServers": {
     "excel": {
       "command": "uvx",
-      "args": ["excel-mcp"]
+      "args": ["excel-mcp-polars"]
     }
   }
 }
@@ -26,7 +26,7 @@ The fastest way — `uvx` downloads and runs the package on demand:
 ### With `pip`
 
 ```bash
-pip install excel-mcp
+pip install excel-mcp-polars
 ```
 
 Then use `excel-mcp` as the command in your client config (see setup sections below).
@@ -49,13 +49,13 @@ Edit the config file:
   "mcpServers": {
     "excel": {
       "command": "uvx",
-      "args": ["excel-mcp"]
+      "args": ["excel-mcp-polars"]
     }
   }
 }
 ```
 
-**With `pip install excel-mcp`**:
+**With `pip install excel-mcp-polars`**:
 
 ```json
 {
@@ -75,7 +75,7 @@ Restart Claude Desktop. You can now ask:
 ### Claude Code (CLI)
 
 ```bash
-claude mcp add excel-mcp -- uvx excel-mcp
+claude mcp add excel-mcp -- uvx excel-mcp-polars
 ```
 
 ### GitHub Copilot / VS Code
@@ -88,7 +88,7 @@ claude mcp add excel-mcp -- uvx excel-mcp
     "excel": {
       "type": "stdio",
       "command": "uvx",
-      "args": ["excel-mcp"]
+      "args": ["excel-mcp-polars"]
     }
   }
 }
@@ -102,7 +102,7 @@ claude mcp add excel-mcp -- uvx excel-mcp
     "excel": {
       "type": "stdio",
       "command": "uvx",
-      "args": ["excel-mcp"]
+      "args": ["excel-mcp-polars"]
     }
   }
 }
@@ -129,7 +129,7 @@ In your MCP client config:
   "mcpServers": {
     "excel": {
       "command": "uvx",
-      "args": ["excel-mcp"],
+      "args": ["excel-mcp-polars"],
       "env": {
         "EXCEL_MCP_ALLOWED_DIRS": "/home/alice/reports:/home/alice/exports"
       }
@@ -197,7 +197,7 @@ Any attempt to read or write outside the listed directories will be rejected wit
 
 ## Why stdio (local-only)
 
-excel-mcp runs as a local process on your machine, not as a hosted service. This is intentional.
+excel-mcp-polars runs as a local process on your machine, not as a hosted service. This is intentional.
 
 The tools operate on file paths that point to **your filesystem**. A remote server would require uploading your files to third-party infrastructure before any query could run — spreadsheets that often contain payroll data, customer records, financial projections, or other sensitive information.
 
@@ -208,7 +208,7 @@ Running locally means:
 - No per-query cost or rate limits
 - Works on air-gapped or restricted networks
 
-The tradeoff is that users install the package themselves, but that is a one-time step (`pip install excel-mcp` or `uvx`) and is the right default for a tool whose entire job is reading your private data.
+The tradeoff is that users install the package themselves, but that is a one-time step (`pip install excel-mcp-polars` or `uvx excel-mcp-polars`) and is the right default for a tool whose entire job is reading your private data.
 
 ---
 
@@ -252,8 +252,8 @@ LIMIT 10
 ## Development
 
 ```bash
-git clone https://github.com/your-org/excel-mcp
-cd excel-mcp
+git clone https://github.com/your-org/excel-mcp-polars
+cd excel-mcp-polars
 pip install -e .
 excel-mcp  # starts the server on stdio
 ```
@@ -261,7 +261,7 @@ excel-mcp  # starts the server on stdio
 Test interactively with the MCP Inspector:
 
 ```bash
-npx @modelcontextprotocol/inspector excel-mcp
+npx @modelcontextprotocol/inspector excel-mcp-polars
 ```
 
 ---

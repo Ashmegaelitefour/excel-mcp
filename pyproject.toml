@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "excel-mcp-polars"
-version = "0.1.0"
+version = "0.1.1"
 description = "MCP server for querying and transforming Excel, CSV, TSV and Parquet files with Polars"
 readme = "README.md"
 requires-python = ">=3.10"
