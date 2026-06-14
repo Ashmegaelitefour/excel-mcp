@@ -38,3 +38,6 @@ Issues = "https://github.com/Ashmegaelitefour/excel-mcp/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
