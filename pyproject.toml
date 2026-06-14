@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "MCP server for querying and transforming Excel, CSV, TSV and Parquet files with Polars"
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT" }
+license = { file = "LICENSE" }
 keywords = ["mcp", "excel", "polars", "etl", "llm"]
 classifiers = [
     "Development Status :: 4 - Beta",
