@@ -1,6 +1,6 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["setuptool", "wheel"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "excel-mcp-polars"
@@ -36,8 +36,5 @@ excel-mcp-polars = "excel_mcp.server:main"
 Homepage = "https://github.com/Ashmegaelitefour/excel-mcp"
 Issues = "https://github.com/Ashmegaelitefour/excel-mcp/issues"
 
-[tool.hatch.build.targets.wheel]
-packages = ["excel_mcp"]
-
-[tool.hatch.build]
-package-dir = { "" = "src" }
+[tool.setuptools.packages.find]
+where = ["src"]
